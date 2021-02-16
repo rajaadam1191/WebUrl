@@ -1,0 +1,373 @@
+﻿@model WEBURL.Models.WebUrlModelFireFighters
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WebUrlView</title>
+
+    <link href="~/style/all.css" rel="stylesheet" />
+    <link href="~/style/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/style/sweetalert2.min.css" rel="stylesheet" />
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <style>
+        #tblFireFighters {
+            background-color: lightgray;
+        }
+
+        #tblFireAiders {
+            background-color: lightgray;
+        }
+
+        .imgsize {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+        }
+
+        /*.table4column {
+            padding-left: 25px;
+        }*/
+
+        /*.tblstyle {
+            width: 100%;
+        }
+
+        table tr td {
+            border: 1px solid black;
+
+
+            padding:10px;
+        }*/
+
+        thead tr th {
+            font-size: x-large;
+        }
+
+        .paddingleftcolumn {
+            padding-left: 10%;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .titlestyle {
+            color: #006a9c;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+    <style>
+        @@media all and (max-width: 640px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 800px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 900px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1000px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1300px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1400px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1600px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1800px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 1900px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+
+        @@media all and (max-width: 2000px) {
+
+            .screenresposive {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body class="screenresposive container-inverse" style="background-color:#f2f2e4">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="~/style/Image/logo.png" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="col-md-12" style="height:100%;width:100%;">
+                <div id="demo1" class="carousel slide" data-ride="carousel" data-interval="10000">
+                    <!-- Indicators -->
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo1" data-slide-to="0" class="active" style="background-color:#b45858;"></li>
+                        <li data-target="#demo1" data-slide-to="1" style="background-color:#b45858;"></li>
+                    </ul>
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div id="Firefighterslide" class="card shadow p-3 mb-5 bg-white rounded  ">
+                                <h1 class="titlestyle">TRAINED FIRE FIGHTERS AVAILABILE IN FACTORY TODAY</h1>
+                                <div class="table100 ver1" style="border:outset; background-color:ivory">
+                                    <table id="tblFireFighters" class="tblstyle table-striped">
+
+                                        <thead class="">
+                                            <tr>
+                                                <th>S.NO</th>
+                                                <th>NAME</th>
+                                                <th>DEPARTMENT</th>
+                                                <th>FIRE FIGHTERS</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+
+                                                foreach (var any in Model.WUVTabledatafromdbFireFighters)
+                                                {
+                                                    <tr>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FFsno)</td>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FFname)</td>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FFdepartment)</td>
+                                                        <td class="">
+
+                                                            @{
+                                                                if ((any.FFpunchcount) == "out")
+                                                                {
+
+                                                                    <img class="imgsize" id="RedImage" src="~/style/Image/Redbulb.jpeg" />
+                                                                }
+                                                                else
+                                                                {
+
+                                                                    <img class="imgsize" id="GreenImage" src="~/style/Image/Greenbulb.jpg" />
+                                                                }
+                                                            }
+
+                                                        </td>
+
+
+                                                    </tr>
+                                                                }
+
+                                            }
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="Fireaiderslide" class="card shadow p-3 mb-5 bg-white rounded  ">
+                                <h1 class="titlestyle">TRAINED FIRST AIDERS AVAILABILE IN FACTORY TODAY</h1>
+                                <div class="table100 ver1" style="border:outset; background-color:ivory">
+                                    <table id="tblFireAiders" class="tblstyle table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>S.NO</th>
+                                                <th>NAME</th>
+                                                <th>DEPARTMENT</th>
+                                                <th>FIRE AIDERS</th>
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+
+                                                foreach (var any in Model.WUVTabledatafromdbFireAiders)
+                                                {
+                                                    <tr>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FAsno)</td>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FAname)</td>
+                                                        <td class="paddingleftcolumn">@Html.DisplayFor(li => any.FAdepartment)</td>
+                                                        <td class="">
+
+                                                            @{
+                                                                if ((any.FApunchcount) == "out")
+                                                                {
+
+                                                                    <img class="imgsize" id="RedImage" src="~/style/Image/Redbulb.jpeg" />
+                                                                }
+                                                                else
+                                                                {
+
+                                                                    <img class="imgsize" id="GreenImage" src="~/style/Image/Greenbulb.jpg" />
+                                                                }
+                                                            }
+
+                                                        </td>
+
+
+                                                    </tr>
+                                                                }
+
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="~/style/jquery.min.js"></script>
+    <script src="~/style/bootstrap.min.js"></script>
+    <script src="~/style/jquery.dataTables.min.js"></script>
+    @*<script src="../UI/Style/popper.min.js"></script>*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            FireFighters();
+            FireAiders();
+            var loadvarFighters = setInterval("onclickNextFighters()", 2000);
+            var loadvarAiders = setInterval("onclickNextAiders()", 1000);
+            //$("#tblFireFighters").dataTable(
+            //    {
+            //        sDom: 'lrtip',
+            //        "bPaginate": false,
+            //        "bLengthChange": false,
+            //        "bFilter": true,
+            //        "bInfo": false,
+            //        "bAutoWidth": false
+            //    });
+            //$("#tblFireAiders").dataTable(
+            //    {
+            //        sDom: 'lrtip',
+            //        "bPaginate": false,
+            //        "bLengthChange": false,
+            //        "bFilter": true,
+            //        "bInfo": false,
+            //        "bAutoWidth": false
+            //    });
+
+
+        })
+        //var loadvar = setInterval("reload()", 10000);
+
+        //function reload() {
+        //    console.log("enter");
+        //    location.reload();
+        //    console.log("exit");
+
+        //}
+        //14400000==4hours
+        //();
+
+
+    </script>
+    <script>
+        function FireFighters(){
+            var table = $('#tblFireFighters').DataTable({
+                pagingType:"full_numbers"
+            });
+              //var pageInfo = table.page.info();
+            //var interval = setInterval(function () {
+            //    table.page('next').draw('page');
+            //    if (table.page() + 1 === pageInfo.end)
+            //        table.page('first').draw('page');
+            //}, 2000);
+        }
+        function FireAiders() {
+            var table = $('#tblFireAiders').DataTable({
+                pagingType: "full_numbers"
+            });
+             //var pageInfo = table.page.info();
+            //var interval = setInterval(function () {
+            //    table.page('next').draw('page');
+            //    if (table.page() + 1 === pageInfo.end)
+            //        table.page('first').draw('page');
+            //}, 2000);
+        }
+
+    </script>
+    <script>
+        function onclickNextFighters() {
+            console.log("enter");
+            $('tblFireFighters_next').click();
+            console.log("exit");
+
+        }
+
+        function onclickNextAiders() {
+            console.log("enter");
+            $('tblFireAiders_next').click();
+            console.log("exit");
+
+        }
+
+    </script>
+
+</body>
+</html>
