@@ -330,7 +330,9 @@
             var tableff = $('#tblFireFighters').DataTable({
                 "pagingType": 'full_numbers',
                 "bPaginate": true,
-                "bInfo": true,
+                "bInfo": false,
+                "bLengthChange": false,
+                "searching": false
             });
 
           
@@ -352,8 +354,9 @@
                 var table = $('#tblFireAiders').DataTable({
                     "pagingType": 'full_numbers',
                     "bPaginate": true,
-                     "bInfo": true,
-                   
+                    "bInfo": false,
+                    "bLengthChange": false,
+                     "searching": false
                 });
                 
                 var loadvarAiders = setInterval(function(){
