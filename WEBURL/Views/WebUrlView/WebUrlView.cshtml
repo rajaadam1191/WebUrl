@@ -295,20 +295,31 @@
         $(document).ready(function () {
             FireFighters();
             FireAiders();
-           
-            $('#tblFireFighters_first').click();
-            $('#tblFireAiders_first').click();
+            var loadvarFightersFirst = setInterval(function () {
+                console.log("enter");
+
+                $('#tblFireAiders_first').click();
+
+                console.log("exit");
+            }, 16000);
+            
+
+            var loadvarAidersFirst = setInterval(function () {
+                console.log("enter");
 
 
+                $('#tblFireFighters_first').click();
+                console.log("exit");
+            }, 16000);
         })
-        //var loadvar = setInterval("reload()", 10000);
+        var loadvar = setInterval("reload()", 31000);
 
-        //function reload() {
-        //    console.log("enter");
-        //    location.reload();
-        //    console.log("exit");
+        function reload() {
+            console.log("enter");
+            location.reload();
+            console.log("exit");
 
-        //}
+        }
         //14400000==4hours
         //();
 
@@ -331,7 +342,8 @@
                
                 console.log("exit");
             }, 3000);
-
+            
+            
             
            
             }
@@ -351,8 +363,8 @@
                    
                     console.log("exit");
                 }, 3000);
-                
                
+                
                     
 
                  
