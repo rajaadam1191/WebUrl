@@ -131,6 +131,10 @@
     <Content Include="style\all.css" />
     <Content Include="style\bootstrap.min.css" />
     <Content Include="style\bootstrap.min.js" />
+    <Content Include="style\buttons.flash.min.js" />
+    <Content Include="style\buttons.html5.min.js" />
+    <Content Include="style\buttons.print.min.js" />
+    <Content Include="style\dataTables.buttons.min.js" />
     <Content Include="style\Image\green.jpg" />
     <Content Include="style\Image\Greenbulb.jpg" />
     <Content Include="style\Image\Log1.jpg" />
@@ -140,9 +144,12 @@
     <Content Include="style\jquery.dataTables.min.css" />
     <Content Include="style\jquery.dataTables.min.js" />
     <Content Include="style\jquery.min.js" />
+    <Content Include="style\jszip.min.js" />
+    <Content Include="style\pdfmake.min.js" />
     <Content Include="style\popper.min.js" />
     <Content Include="style\sweetalert.min.js" />
     <Content Include="style\sweetalert2.min.css" />
+    <Content Include="style\vfs_fonts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
